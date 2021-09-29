@@ -1,0 +1,32 @@
+
+<h1 class="heading">Employee management system</h1>
+
+<table class="table table-bordered">
+  <thead class="table table-bordered table-dark">
+    <tr align="center">
+       <th scope="col" >Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Designation</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emps.each do |emp| %>
+      <tr>
+        <td><%= emp.name %></td>
+        <td><%= emp.age %></td>
+        <td><%= emp.gender %></td>
+        <td><%= emp.designation %></td>
+        <td><%= link_to 'Show', emp, :class=>"link-primary" %></td>
+        <td><%= link_to 'Edit', edit_emp_path(emp), :class=>"link-secondary" %></td>
+        <td><%= link_to 'Destroy', emp, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"link-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<center><%= link_to 'ADD', new_emp_path, :class=>"btn btn-warning"%></center>

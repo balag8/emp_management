@@ -1,0 +1,32 @@
+<h1 class="heading">Employee management system</h1>
+
+<p id="notice"><%= notice %></p>
+<div class="card" style="width:18rem;">
+	<div class="card-header">
+		New Employee Been Added
+	</div>
+	<div class="card-body">
+<p>
+  <strong>Name:</strong>
+  <%= @emp.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @emp.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @emp.gender %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @emp.designation %>
+</p>
+
+<%= link_to 'Edit', edit_emp_path(@emp), :class=>"btn btn-warning" %> |
+<%= link_to 'Back', emps_path, :class=>"btn btn-info" %>
+</div>
+</div>

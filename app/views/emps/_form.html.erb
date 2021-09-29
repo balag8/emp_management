@@ -1,0 +1,50 @@
+<%= form_with(model: emp) do |form| %>
+  <% if emp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(emp.errors.count, "error") %> prohibited this emp from being saved:</h2>
+
+      <ul>
+        <% emp.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="container">
+    <h1>Add Employee</h1>
+  <div class="field">
+  <div class="form-group">
+  <label for="name" class="text-dark">Name OF Employee</label>
+    <%= form.text_field :name, :class=>"form-control" %>
+  </div>
+</div>
+
+   <div class="field">
+  <div class="form-group">
+  <label for="age" class="text-dark">Age</label>
+    <%= form.text_field :age,  :class=>"form-control" %>
+  </div>
+</div>
+
+  <div class="field">
+  <div class="form-group">
+  <label for="gender" class="text-dark">Gender</label>
+  <%= form.text_field :gender, :class=>"form-control" %>
+  </div>
+</div>
+
+
+  <div class="field">
+  <div class="form-group">
+  <label for="designation" class="text-dark">Designation </label>
+  <%= form.text_field :designation, :class=>"form-control" %>
+  </div>
+</div>
+
+  <div class="actions"><center>
+    <%= form.submit :class=>"btn btn-warning" %></center>
+  </div>
+</div>
+<% end %>
